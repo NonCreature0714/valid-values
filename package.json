@@ -1,0 +1,26 @@
+{
+  "name": "@noncreature0714/valid-values",
+  "version": "1.0.0",
+  "description": "A url and general input validator to help with passing correct arguments and so forth.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tbd"
+  },
+  "keywords": [
+    "valid",
+    "validator",
+    "validation",
+    "truth",
+    "url",
+    "strings",
+    "string"
+  ],
+  "author": "William W Brubaker",
+  "license": "MIT"
+}
