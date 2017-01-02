@@ -29,3 +29,6 @@ const isFileOrDirectory = (filePath) => {
 const isFoldOfAtLeastOne = (fileType, atPath) => {
 	//TODO: complete
 }
+
+
+module.exports = {isAString,isFile,isADirectory,isFileOrDirectory,isFolderOfAtLeastOne};
