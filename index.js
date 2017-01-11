@@ -1,34 +1,79 @@
 const path = require('path');
+const fs = require('fs');
 
 //TODO: create simple validators for primatives.
 //TODO: create validators for other Types.
 
-const isArrayOfOneElement = (array: Array()) => {
+const isArrayWithHowManyElements = (array, numElements) => {
 	//TODO: complete, improve
-	return array.length === 1;
-}
-
+	if(typeof array === 'array' || typeof array === 'Array' || array instanceof Array){
+		return array.length === numElements;
+	} else {
+		return false;
+	}
+};
 
 const isAString = (value) => {
 	return typeof value === 'string' || value instanceof String;
 }
 
 const isFile = (ofType, atPath) => {
-	//TODO: complete	
+	if(isAString(atPath)){
+		var value = path.extname(atPath) === ofType;
+		console.log('File is ' + ofType + ': ' + value);
+		return value;
+	} else {
+		console.log(atPath + ' is not a string! Exiting... ');
+		process.exit('1');
+	}
 }
 
 const isADirectory = (filePath) => {
-	//TODO: complete
+	if(isAString(filePath)){
+		var value = fs.lstatSync(filePath).isDirectory();
+		console.log('Checking if ' + filePath + ' is directory: ' + value);
+		return value;
+	} else {
+		console.log(filePath + ' is not a string! Exiting... ');
+		process.exit('1');
+	}
 }
 
 
 const isFileOrDirectory = (filePath) => {
-	//TODO: complete
+	if(isAString(filePath)){
+		var value = fs.existsSync(filePath);
+		console.log('Checking if path is a file or directory: ' + value);
+		return value;
+	} else {
+		console.log(filePath + ' is not a string! Exiting... ');
+		process.exit('1');
+	}
 }
 
 const isFoldOfAtLeastOne = (fileType, atPath) => {
-	//TODO: complete
+	console.log('Checking if there are ' + fileType + ' in folder: ' + filePath);
+	var isOne = false;
+	if(isADirectory(atPath)){
+		files = fs.readdirSync(atPath);
+		console.log('Files are: ' + files);
+		if (files.length > 0) {
+			files.forEach(file => {
+				if (isFile(fileType, file)) {
+					isOne = true;
+				}
+			});
+		} else {
+			console.log('No files in the folder.');
+			isOne = false;
+		}
+	} else {
+		console.log(atPath + ' is not a directory.');
+		isOne = false;
+	}
+	return isOne;
 }
 
 
-module.exports = {isAString,isFile,isADirectory,isFileOrDirectory,isFolderOfAtLeastOne};
+
+module.exports = {isArrayWithHowManyElements, isAString, isFile, isADirectory, isFileOrDirectory, isFoldOfAtLeastOne};
