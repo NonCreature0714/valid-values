@@ -1,9 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 
-//TODO: create simple validators for primatives.
-//TODO: create validators for other Types.
-
 const isArrayWithHowManyElements = (array, numElements) => {
 	//TODO: complete, improve
 	if(typeof array === 'array' || typeof array === 'Array' || array instanceof Array){
@@ -73,7 +70,5 @@ const isFoldOfAtLeastOne = (fileType, atPath) => {
 	}
 	return isOne;
 }
-
-
 
 module.exports = {isArrayWithHowManyElements, isAString, isFile, isADirectory, isFileOrDirectory, isFoldOfAtLeastOne};
