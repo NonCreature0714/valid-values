@@ -1,6 +1,6 @@
 {
-  "name": "@noncreature0714/valid-values",
-  "version": "1.0.0",
+  "name": "valid-values",
+  "version": "1.0.2",
   "description": "A url and general input validator to help with passing correct arguments and so forth.",
   "main": "index.js",
   "dependencies": {},
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/noncreature0714/valid-values.git"
+    "url": "git+https://github.com/noncreature0714/valid-values.git"
   },
   "keywords": [
     "valid",
@@ -22,5 +22,9 @@
     "string"
   ],
   "author": "William W Brubaker",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noncreature0714/valid-values/issues"
+  },
+  "homepage": "https://github.com/noncreature0714/valid-values#readme"
 }

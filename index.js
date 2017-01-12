@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 
 const isArrayWithHowManyElements = (array, numElements) => {
-	//TODO: complete, improve
 	if(typeof array === 'array' || typeof array === 'Array' || array instanceof Array){
 		return array.length === numElements;
 	} else {
